@@ -209,7 +209,7 @@ namespace EXCEED_CustomWFActivities
             using (TaskService tasksrvc = new TaskService(
                 this.SyncMachineName, this.O365AdminUsername, this.Domain, this.O365AdminPassword, false))
             {
-                Task task = tasksrvc.FindTask("Azure AD Sync Scheduler", false);
+                Task task = tasksrvc.FindTask(this.TaskName, false);
 
                 if (task == null)
                     throw new ItemNotFoundException("Unable to find the specified scheduled task");
